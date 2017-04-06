@@ -32,7 +32,7 @@ li{
 .title-back{
 	text-align: center;
 	padding: 0px;
-	margin: 5px 0px;
+	margin: 5px 0px 50px 0px;
 }
 .title-back .title-text {
 	text-align: center;
@@ -62,10 +62,6 @@ li{
 .caption-back .caption-text .date{
     font-weight:300;
 }
-.post{
-	margin: auto;
-	padding: 20px;
-} 
 .center-img{
     margin: 0 auto;
 }

@@ -1,0 +1,81 @@
+---
+layout : default
+title: Go Real Time With AJAX
+tags: web ajax javascript
+keywords: <meta name="keywords" content="shashwatdixit.com,Shashwat,Dixit,Developer,Developer's,Blog,Article,Go,Real,Time,With,Ajax" />
+description: Ajax stands for Asynchronous JavaScript And XML. When we request a page we do it synchrously i.e. we have to wait for the response to proceed to the next step. But with it AJAX it is simple, communicate with the server and handle the response whenever request is completed in the mean time you can do your work.
+
+twitter: <meta name="twitter:card" content="summary" /><meta name="twitter:creator" content="@shashwat_124" /><meta property="og:url" content="http://shashwatdixit.com/blogs/Go-Real-Time-With-Ajax" /><meta property="og:title" content="Go Real Time With AJAX" /><meta property="og:description" content="Ajax stands for Asynchronous JavaScript And XML. When we request a page we do it synchrously i.e. we have to wait for the response to proceed to the next step. But with it AJAX it is simple, communicate with the server and handle the response whenever request is completed in the mean time you can do your work." />
+
+css: css/articles/Go-Real-Time-With-Ajax.css
+
+---
+
+<div class="container-fluid">
+<div class="row" id="wrapper">
+	<div class="col-xs-12 title-back">
+		<div class="title-text">
+			<span id="inline-box">Go Real Time With</span> <span id="inline-box" class="ajax">AJAX</span>
+		</div>
+	</div>
+	<div class="post">
+		<div class="row">
+			<div class="col-md-2 col-sm-1"></div>
+			<div class="col-md-8 col-sm-10">
+				<p>
+					As stated previously, <strong>Ajax</strong> stands for <strong><i>Asynchronous JavaScript And XML</i></strong>.<br><br><br>
+					<b>Q : </b>But what exactly does that mean?<br><br>
+					Doing things Synchrously in Java Script<br><br>
+					<pre>
+var data = database.query("SELECT Id FROM Employee");
+console.log(data);
+console.log("this is synchrous java script");</pre>
+					Doing things Asynchrously in java script<br><br>
+					<pre>
+database.query("SELECT Id FROM Employee", function(data) {
+    console.log(data);
+});
+console.log("this is asynchorous java script");</pre><br><br>
+				</p>
+				<p>
+					In First Case program will wait for the function database.query() to complete and then go to next line. But in the next case program will not wait for the function and will print the message in console before the query has been completed.
+					<br><br>
+					the result of above will be<br><br>
+					<pre>
+I case:
+all the Id's
+this is synchrous java script
+
+II case:
+this is asynchrous java script
+all the Id's 	</pre><br><br>
+				</p>
+				<p>
+					When we request a page we do it synchrously i.e. we have to wait for the response to proceed to the next step. But with it AJAX it is simple, communicate with the server and handle the response whenever request is completed in the mean time you can do your work.<br><br><br>
+
+					<b>Q : </b>Where are Ajax used ?<br><br>
+					<ul>
+						<li>
+							Search Suggestions
+						</li>
+						<li>
+							Facebook uses it a Lot in chating, Like, Comment, etc.
+						</li>
+						<li>
+							Real time Form Validation
+						</li>
+						<li>
+							Login
+						</li>
+					</ul>
+					<br><br><br>
+					Some resources to learn AJAX<br><br>
+					<a href="http://www.tutorialspoint.com//ajax/index.htm">Tutorials-Point AJAX</a><br>
+					<a href="http://ptgmedia.pearsoncmg.com/images/9780132272674/downloads/0132272679_Woychowsky_book.pdf">Creating Web Page with Asynchrous Java Script</a><br>
+				</p>
+			</div>
+			<div class="col-md-2 col-sm-1"></div>
+		</div>
+	</div>
+</div>
+</div>
