@@ -1,0 +1,108 @@
+---
+layout: default
+title: Macros In Rust Programming Language
+tags: rust
+description: Macros allow us to abstract at a syntactic level. A macro invocation is shorthand for an "expanded" syntactic form. In Rust we can use Pattern Matching to create a hard looking code but at the same very useful like vec! macro . 
+permalink: blogs/Rust-Macros
+
+twitter: <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:creator" content="@shashwat_124" /><meta property="og:url" content="http://shashwatdixit.com/blogs/Rust-Macros" /><meta property="og:title" content="Macros In Rust Programming Language" /><meta property="og:description" content="Macros allow us to abstract at a syntactic level. A macro invocation is shorthand for an expanded syntactic form. In Rust we can use Pattern Matching to create a hard looking code but at the same very useful like vec! macro ." /><meta property="og:image" content="{{site.baseurl}}/image/this-is-awesome.jpg" />
+css: css/articles/Rust-Macros.css
+---
+
+
+<div class="container-fluid">
+<div class="row" id="wrapper">
+	<div class="col-xs-12 title-back">
+		<div class="title-text">
+			<span id="inline-box">Macros In </span><span id="inline-box" class="rust"> Rust Programming Language</span>
+		</div>
+	</div>
+	<div class="caption-back">
+		<div class="caption-text">
+			posted by Shashwat Dixit <span class="date"> on 15/03/2017</span>
+		</div>
+	</div>
+	<div class="post">
+		<div class="row">
+			<div class="col-md-2 col-sm-1"></div>
+			<div class="col-md-8 col-sm-10">
+                <p>
+                    <a href = "#defination">Defining a Macro</a><br>
+                    <a href = "#use">Using a Macro</a><br>
+                    <a href = "#repetition">Repetition In Macros</a><br><br>
+                    <div id="defination"><h4>Defining a Macro</h4></div><br>
+
+                    In Rust macros declarations start from macro_rules like <code>macro_rules! some_macro{() => ()}</code><br>
+                    Here some_macro is name of the macro.<br>
+                    <h5>Example</h5><br>
+<pre>
+macro_rules! add{
+  ($x:expr,$y:expr) => ($x + $y);
+}
+</pre><br>
+
+
+                    <div id="use"><h4>Using a Macro</h4></div><br>
+
+                    To use a Macro in rust we write it's name with an exclamation point like <code>add!</code> .<br>
+                    Let say we define a macro that takes two expressions (say x and y) and evaluates to x + y on compiling.
+                    <h5>Example</h5><br>
+<pre>
+macro_rules! add{
+  ($x:expr,$y:expr) => ($x + $y);
+}
+
+fn main(){
+  println!("{}",add!(3,5));
+  println!("{}",add!(3,add!(4,5)));
+  println!("{}",add!({3-5},{5*3}));
+}
+</pre><br>
+                    Output for the above example will be<br>
+<pre>
+8
+12
+13
+</pre><br>
+                    So <code>println!("{}",add!(3,add!(4,5)));</code> will be converted to
+                    <code>println("{}",3 + 4 + 5);</code> on compiling<br>
+                    
+                    <div id="repetition"><h4>Repetition In Macros</h4></div><br>
+                    
+                    <code>vec!</code> macro can take different no of parameters like <code>let x = vec![1,2,3,4];</code><br>
+                    We can also create macros that can work with repeated values.<br>
+                    <h5>Example</h5>
+<pre>
+macro_rules! double_vec{
+    ($($x:expr),*) => ({
+        let mut temp = Vec::new();
+        $(
+            temp.push($x*2);
+        )*
+        temp
+    });
+}
+
+fn main(){
+    let new_vec = double_vec![2,3,5,6];
+    println!("{:?}",new_vec);
+}
+</pre><br>
+                    Breaking Down the code, $(...)* means zero or more parameters $(...)+ means one or more parameters. 
+                    Here macro matches the pattern of parameters seperated by ',' and push twice the value of parameters in a vector and returns it.<br><br>
+                    Output for the above example will be<br>
+<pre>
+[4, 6, 10, 12]
+</pre><br>
+                    <br>
+                    <img class="img-responsive center-img" src="{{ site.baseurl }}/image/this-is-awesome.jpg" height="360" width="640">
+                    <br>
+					<br>For Full Documentation Go To<br>
+					<a href="https://doc.rust-lang.org/book/macros.html">Macros - Rust Documentation</a><br>
+				</p>
+			</div>
+			<div class="col-md-2 col-sm-1"></div>
+		</div>
+	</div>
+</div>
+</div>

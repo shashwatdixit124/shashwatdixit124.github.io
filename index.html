@@ -20,8 +20,10 @@ bodyjs:
 							<h3><a href="{{post.url}}">{{post.title}}</a></h3>
 						</div>
 						<div class="article-date-tag">
-							{{post.date | date: "%b %-d, %Y"}}&nbsp;&nbsp;
-							<span class="tag">{{post.tag}}</span>
+							{{post.date | date: "%Y-%m-%d"}}&nbsp;&nbsp;
+							{% if post.tags %}
+							Tags : {{post.tags}}
+							{% endif %}
 						</div>
 						{% if post.description %}
 						<div class="article-body">
