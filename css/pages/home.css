@@ -1,0 +1,56 @@
+#article-list{margin-bottom: 30px;}
+#article-list .article{
+	padding: 40px 0px;
+	border-bottom: solid 1px rgb(230,230,230);
+}
+.article .article-title h3{
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+	color: #444;
+}
+.article .article-date-tag{
+	line-height: 20px;
+	padding: 0px 15px;
+	margin-bottom: 20px;
+	color: rgb(150,150,150);
+	font-size: 12px;
+}
+.article .article-date-tag .tag{
+	margin: 3px;
+	color: rgb(150,150,150);
+}
+.article .article-date-tag .tag:hover{
+	text-decoration: underline;
+}
+.article .article-body p{
+	padding: 10px;
+	font-size: 14px;
+	color: #555;
+}
+@media(min-width: 480px)
+{
+	.article .article-body p{
+		font-size: 14.5px;
+	}
+}
+/*tags*/
+
+#blog-tags{
+	padding: 0px;
+	margin-bottom: 50px;
+	border: solid 1px lightgrey;
+	background-color: #fff;
+}
+#blog-tags-title{
+	width: 100%;
+	padding: 5px 0px;
+	text-align: center;
+	font-size: 18px;
+	font-family: "Sans";
+}
+#tags-list{padding: 20px;}
+#tags-list a:hover,a:focus{text-decoration: none;}
+#tags-list .tag{
+	font-size: 16px;
+	margin: 3px;
+}
