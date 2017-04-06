@@ -17,9 +17,12 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/css/pages/app.css">
-	
-	{{page.css}}
-	{{page.headjs}}
+	{% if page.css %}
+	<link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/{{ page.css }}">
+	{% endif %}
+	{% if page.headjs %}
+	<script type="text/javascript" src="{{site.baseurl}}/{{page.headjs}}"></script>
+	{% endif %}
 
 </head>
 <body>
@@ -68,7 +71,9 @@
 		</div>
 	</div>
 
-{{page.bodyjs}}
+{% if page.bodyjs %}
+	<script type="text/javascript" src="{{site.baseurl}}/{{page.bodyjs}}"></script>
+{% endif %}
 	
 	<script type="text/javascript">
 		$('#nav-toggle').click(function(){

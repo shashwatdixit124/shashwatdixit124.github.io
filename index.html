@@ -1,3 +1,37 @@
 ---
 layout: default
+title: Home - Shashwat Dixit
+keywords: <meta name="keywords" content="shashwatdixit.com,Shashwat,Dixit,Developer,Developer's,Blog,Home" />
+twitter:
+css: css/pages/home.css
+headjs:
+bodyjs:
 ---
+
+
+<div class="container">
+	<div class="row" id="wrapper">
+		<div class="col-xs-12 col-md-8 col-md-push-2">
+			<div class="row" id="article-list">
+				{% for post in site.posts %}
+				<div class="col-xs-12">
+					<div class="article">
+						<div class="article-title">
+							<h3><a href="{{post.url}}">{{post.title}}</a></h3>
+						</div>
+						<div class="article-date-tag">
+							{{post.date | date: "%b %-d, %Y"}}&nbsp;&nbsp;
+							<span class="tag">{{post.tag}}</span>
+						</div>
+						{% if post.description %}
+						<div class="article-body">
+							<p>{{post.description}}</p>
+						</div>
+						{% endif %}
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
