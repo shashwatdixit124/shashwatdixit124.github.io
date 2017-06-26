@@ -1,0 +1,109 @@
+---
+layout: default
+title: P2P File Transfer With IPConnect
+tags: 
+    - P2P
+    - Networking
+    - Qt
+keywords: <meta name="keywords" content="shashwatdixit.com,Shashwat,Dixit,Developer,Developer's,Blog,Article,P2P,File,Transfer,Qt,qml,Networking" />
+description: Macros allow us to abstract at a syntactic level. A macro invocation is shorthand for an "expanded" syntactic form. In Rust we can use Pattern Matching to create a hard looking code but at the same very useful like vec! macro . 
+permalink: blogs/P2P-File-Transfer-With-IPConnect
+
+twitter: <meta name="twitter:card" content="summary_large_image" /><meta name="twitter:creator" content="@shashwat_124" /><meta property="og:url" content="http://shashwatdixit.com/blogs/P2P-File-Transfer-With-IPConnect" /><meta property="og:title" content="Macros In Rust Programming Language" /><meta property="og:description" content="Macros allow us to abstract at a syntactic level. A macro invocation is shorthand for an expanded syntactic form. In Rust we can use Pattern Matching to create a hard looking code but at the same very useful like vec! macro ." /><meta property="og:image" content="https://raw.githubusercontent.com/shashwatdixit124/IPConnect/v2/images/ipconnect.png" />
+css: css/articles/P2P-File-Transfer-With-IPConnect.css
+---
+
+
+<div class="container-fluid">
+<div class="row" id="wrapper">
+	<div class="col-xs-12 title-back">
+		<div class="title-text">
+			<span id="inline-box">P2P File Transfer With </span><span id="inline-box" class="ipconnect"> IPConnect</span>
+		</div>
+	</div>
+	<div class="post">
+		<div class="row">
+			<div class="col-md-2 col-sm-1"></div>
+			<div class="col-md-8 col-sm-10">
+				<p>
+					In Summer 2016 I was working on a project, an Application which can send messages and files to other computers on a LAN (Just like IPMessenger).
+					I'm not that creative in naming a project, So what better than IPConnect. 
+				</p>
+				<p>
+					I was new to Qt as well as Software Development, so IPConnect's code structure was a disaster. 
+					It was a working application but not complete. No User notification, Bad Gui , No Download Manager to show downloads and their progress only way to see if a download is happening is to look at the terminal. I stopped working on this project.
+				</p>
+				<p>
+					I learned a lot over the year, and was working to fix bugs on kdev-php a Php Language Plugin for <a href="https://kdevelop.org">KDevelop</a> due to which I learned about Software Development and SOLID Principles, so this summer I thought to make IPConnect from scratch with a new and better Code Base and GUI.
+				</p>
+				<p>
+				<b>Here is a glimpse of IPConnect Version 2</b>
+				</p>
+				<br>
+					<img class="img-responsive center-img" src="https://raw.githubusercontent.com/shashwatdixit124/IPConnect/v2/images/ipconnect.png" height="360" width="640">
+				<br>
+				<p>
+				<b>What's new in Version 2 ? </b>
+				</p>
+				<p>
+				<ul>
+					<li><b>GUI</b></li>
+					<p>Version 2 has New User Interface made with Qt Quick based on Flat Design.</p>
+					<li><b>Download Manager</b></li>
+					<p>Download Manager View provides User with option to accept or reject a transfer and show it's progress.</p>
+					<li><b>Settings View</b></li>
+					<p>User can change default settings using Settings View ex: user name , color theme, etc.</p>
+					<li><b>Encryption</b></li>
+					<p>IPConnect uses <code>RSA</code> 2048 bit and <code>AES</code> 256 bit encryption for sending messages or files.</p>
+				</ul>
+				</p>
+				<br>
+				<p>
+				<b>How does IPConnect work ? </b>
+				</p>
+				<p>
+				Project can be further broken into two liraries <code>IPConnect</code> and <code>IPConnectUi</code>. IPConnect implements all the buiseness logic and IPConnectUi uses IPConnect implement GUI for App.
+				</p>
+				<p>
+				At it's core, <br>
+				IPConnect listens for <code>Connection</code> on port 2423 (for <code>Transfers</code>) and 2424 (for <code>Clients</code>). When a new connection is available say on port 2424 IPConnect knows that a <code>Client</code> is connecting for sharing information and messages and if a connection is made on port 2423 it resolves to a <code>Transfer</code> request.
+				</p>
+				<p>
+				Connection is made secure by sharing <code>RSA</code> public keys.
+				</p>
+				<p>
+				IPConnect has it's own protocol for talking to another IPConnect instance running on other machine. Messages are sent in JSON format which is encrypted before sending. A Message without encryption looks like 
+				</p>
+				<br>
+<pre>
+{
+	"DATA": {
+		"FILENAME": "ipconnect-api-doc.pdf",
+		"FILESIZE": "225689",
+		"USERNAME": "Aviato"
+	},
+	"METHOD": 2,
+	"OPTION": 4
+}
+</pre>
+				<p>
+				<code>Message</code> above is a File Request i.e. some user "Aviato" is sending a file "ipconnect-api-doc.pdf" of size 225689 Bytes. <code>Message</code> is parsed and appropriate action is taken, in this case notifying user that a file request is pending.
+				</p>
+				<br>
+				<p>
+				<a href="https://github.com/shashwatdixit124/IPConnect/blob/v2/Using.md"><b>How To Use IPConnect</b></a>
+				</p>
+				<p>
+				<a href="https://github.com/shashwatdixit124/IPConnect/blob/v2/README.md"><b>How To Build IPConnect</b></a>
+				</p>
+				<p>
+				<a href="https://github.com/shashwatdixit124/IPConnect"><u><b>See this Project on Github.</b></u></a>
+				</p>
+				<br>
+				<br>
+			</div>
+			<div class="col-md-2 col-sm-1"></div>
+		</div>
+	</div>
+</div>
+</div>

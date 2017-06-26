@@ -1,0 +1,67 @@
+pre{
+	background-color: rgb(245,245,245);
+	color: rgb(40,40,40);
+	font-size: 16px;
+}
+p{
+	font-size: 20px;
+	font-weight: 300;
+}
+li{
+	font-size: 15px;
+}
+@media(min-width: 980px){
+	li{
+		font-size: 15px;
+	}
+}
+
+
+.container-fluid{
+	padding: 0px;
+	margin: 0px;
+}
+.row{
+	margin: 0px;
+}
+#wrapper{
+	margin: 0px;
+}
+
+/**************************************************************/
+
+.title-back{
+	text-align: center;
+	padding: 0px;
+	margin: 5px 0px 50px 0px;
+}
+.title-back .title-text {
+	text-align: center;
+	margin: auto;
+    font-size: 30px;
+    font-weight: 300;
+	padding: 20px;
+    color: #2C3E50;
+	background-color: #f8f8f8;
+}
+#inline-box{
+	display: inline-block;
+}
+.title-back .title-text .ipconnect{
+    font-weight: 400;
+    letter-spacing: 3px;
+    padding:0px 10px;
+}
+.caption-back{
+	text-align: center;
+}
+.caption-back .caption-text {
+	margin: auto;
+    font-weight:bold;
+}
+.caption-back .caption-text .date{
+    font-weight:300;
+}
+.center-img{
+    margin: 0 auto;
+}
