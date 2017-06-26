@@ -29,8 +29,9 @@ css: css/articles/Rust-Macros.css
                     <a href = "#repetition">Repetition In Macros</a><br><br>
                     <div id="defination"><h4>Defining a Macro</h4></div><br>
 
-                    In Rust macros declarations start from macro_rules like <code>macro_rules! some_macro{() => ()}</code><br>
-                    Here some_macro is name of the macro.<br>
+                    <p>
+                    In Rust macros declarations start from macro_rules like <code>macro_rules! some_macro{() => ()}</code>. Here some_macro is name of the macro.<br>
+                    </p>
                     <h5>Example</h5><br>
 <pre>
 macro_rules! add{
@@ -40,9 +41,10 @@ macro_rules! add{
 
 
                     <div id="use"><h4>Using a Macro</h4></div><br>
-
+					<p>
                     To use a Macro in rust we write it's name with an exclamation point like <code>add!</code> .<br>
-                    Let say we define a macro that takes two expressions (say x and y) and evaluates to x + y on compiling.
+                    Let say we define a macro that takes two expressions (say x and y) and evaluates to <code>x + y</code> on compiling.
+                    </p>
                     <h5>Example</h5><br>
 <pre>
 macro_rules! add{
@@ -61,13 +63,15 @@ fn main(){
 12
 13
 </pre><br>
+					<p>
                     So <code>println!("{}",add!(3,add!(4,5)));</code> will be converted to
                     <code>println("{}",3 + 4 + 5);</code> on compiling<br>
-                    
+                    </p>
                     <div id="repetition"><h4>Repetition In Macros</h4></div><br>
-                    
+                    <p>
                     <code>vec!</code> macro can take different no of parameters like <code>let x = vec![1,2,3,4];</code><br>
                     We can also create macros that can work with repeated values.<br>
+                    </p>
                     <h5>Example</h5>
 <pre>
 macro_rules! double_vec{
@@ -85,17 +89,21 @@ fn main(){
     println!("{:?}",new_vec);
 }
 </pre><br>
+					<p>
                     Breaking Down the code, $(...)* means zero or more parameters $(...)+ means one or more parameters. 
                     Here macro matches the pattern of parameters seperated by ',' and push twice the value of parameters in a vector and returns it.<br><br>
                     Output for the above example will be<br>
+                    </p>
 <pre>
 [4, 6, 10, 12]
 </pre><br>
                     <br>
                     <img class="img-responsive center-img" src="{{ site.baseurl }}/image/this-is-awesome.jpg" height="360" width="640">
                     <br>
+                    <p>
 					<br>For Full Documentation Go To<br>
 					<a href="https://doc.rust-lang.org/book/macros.html">Macros - Rust Documentation</a><br>
+					</p>
 				</p>
 			</div>
 			<div class="col-md-2 col-sm-1"></div>
