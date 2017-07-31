@@ -223,6 +223,12 @@ a:focus,a:hover{text-decoration: none;}
 #wrapper{
 	margin: 0px;
 }
+
+#disqus_wrapper{
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
 #footer{
 	position: relative;
 	left: 0;
